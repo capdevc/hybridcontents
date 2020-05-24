@@ -6,7 +6,7 @@ from tornado.web import HTTPError
 
 from notebook.services.contents.manager import ContentsManager
 
-from traitlets import Dict
+from traitlets import Dict, Unicode
 
 from .api_utils import (
     base_directory_model,
