@@ -158,6 +158,12 @@ class HybridContentsManager(ContentsManager):
     """ContentsManager subclass that delegates specific subdirectories to other
     ContentsManager/Checkpoints pairs."""
 
+    root_dir = Unicode(config=True)
+
+    @default('root_dir')
+    def _default_root_dir(self):
+        return self.root_manager.root_dir
+
     manager_classes = Dict(
         config=True, help=("Dict mapping root dir -> ContentsManager class."))
 
